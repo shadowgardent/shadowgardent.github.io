@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>เว็บไซต์สำหรับทดสอบ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: yellowgreen;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #444;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            color: aquamarine;
+        }
+
+        div {
+            text-align: center;
+        }
+        img{
+            text-align: center;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="1.-official-logo-2022-04-1101x1024.png" height="100" width="100">
+        <h1>-------Welcome To Computer Science And Information-------Khonkaen University</h1>
+    </header>
+    
+    <nav>
+       
+            <ul>
+                <li><a href="#" onclick="redirectToPage1('หน้าแรก.html')">หน้าแรก</a></li>
+                <li><a href="#" onclick="redirectToPage2('เกี่ยวกับเรา.html')">ติดต่อส่วนตัว</a></li>
+                <li><a href="#" onclick="redirectToPage3('บทความ.html')">หลักสูตรคณะสหวิทยาการ</a></li>
+                <li><a href="#" onclick="redirectToPage4('ติดต่อเรา.html')">ติดต่อเรา</a></li>
+              </ul>
+        
+    </nav>
+    
+    <main>
+        <section>
+            <h2>สิ่งที่ควรรู้</h2>
+            <p>*เว็บนี้ทำขึ้นมาเพื่อโปรโมท สาขาวิทยาการคอมพิวเตอร์และสารสนเทศ CIS โดยเฉพาะ!!</p>
+            <p>*เว็บไซต์นี้อาจมีการพัฒนาขึ้นเรื่อยๆและหวังว่าจะเป็นประโยชน์ต่อมหาวิทยาลัยขอนแก่น วิทยาเขตหนองคาย</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; IN401103 Introduction to computer science 2023 </p>
+    </footer>
+    
+    <h1> C O M P U T E R S C I E N C E  -  A N D  -  I N F O R M A T I O N</h1>
+    <h3>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h3>
+    
+    <div id="login-form">
+        <h2>เข้าสู่ระบบ</h2>
+        <p>user:nawazz pass:1234</p>
+        <p>เพื่อไปที่หน้าเพจ วิทยาการคอมพิวเตอร์และสารสนเทศ มหาวิทยาลัยขอนแก่น</p>
+        <input type="text" id="username" placeholder="ชื่อผู้ใช้"><br><br>
+        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
+        <button onclick="login()">ล็อกอิน</button>
+        <p id="login-message"></p>
+    </div>
+    
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var messageElement = document.getElementById("login-message");
+
+            if (username === "nawazz" && password === "1234") {
+                alert("ล็อกอินสำเร็จ");
+                window.location.href = "https://www.facebook.com/ciskku/";
+            } else if (username !== "nawazz") {
+                alert("ชื่อผู้ใช้ไม่ถูกต้อง");
+            } else if (password !== "1234") {
+                alert("รหัสผ่านไม่ถูกต้อง");
+            }
+        }
+              function redirectToPage1(page) {
+              window.location.href ='https://www.kku.ac.th/';
+             
+            }
+        
+              function redirectToPage4(page) {
+              window.location.href ='https://th.kku.ac.th/contact/';
+             
+            }
+            function redirectToPage2(page) {
+              window.location.href ='https://www.facebook.com/siwaprom.phuphaphiw.5';
+             
+            }
+            function redirectToPage3(page) {
+              window.location.href ='https://admissions.kku.ac.th/faculty/is/';
+             
+            }
+    </script>
+</body>
+</html>
