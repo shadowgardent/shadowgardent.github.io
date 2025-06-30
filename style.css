@@ -18,5 +18,9 @@ body {
     padding: 20px;
     margin: 20px auto;
     width: 300px;
-    text-align: center;
+    text-align: left;
+}
+.h3 {
+    color: black;
+    text-align: left;
 }
