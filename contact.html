@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Responsive Contact Me Page</title>
+</head>
+
+<body>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact me</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ut illum nostrum possimus dolorum velit
+                tempora neque nobis quasi rem.</p>
+        </div>
+
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p> Khonkaen University <br> nongkhai campus 4300</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>084-026-6176</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>E-mail</h3>
+                        <p>Nawaprom.p@kkumail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form id="contactForm">
+                    <h2>Send message</h2>
+                    <div class="inputBox">
+                        <input type="text" class="name" required>
+                        <span>Full Name</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="email" class="email" required>
+                        <span>Email</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <textarea class="message" required></textarea>
+                        <span>Type your message...</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+
+                <script>
+                    const form = document.getElementById('contactForm');
+                    form.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const name = form.querySelector('.name').value.trim();
+                        const email = form.querySelector('.email').value.trim();
+                        const message = form.querySelector('.message').value.trim();
+                        const res = await fetch('http://localhost:3000/send', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, message })
+                        });
+                        const data = await res.json();
+                        if (data.ok) {
+                            alert('ส่งเรียบร้อย');
+                            form.reset();
+                        } else {
+                            alert('ส่งไม่สำเร็จ: ' + (data.error || 'unknown'));
+                            console.error(data);
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
