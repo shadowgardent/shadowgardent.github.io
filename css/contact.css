@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(34, 21, 68);
+    background-color: rgb(12, 12, 12);
     
 }
 .contact .content{
@@ -78,7 +78,7 @@
 
 .container .contactInfo .box .text h3{
     font-weight: 500;
-    color: #00bcd4;
+    color:#350bf5;
 }
 .contactForm{
     width: 40%;
@@ -88,7 +88,7 @@
 }
 .contactForm h2{
     font-size: 30px;
-    color: #333;
+    color: #350bf5;
     font-weight: 500;
     
 }
@@ -105,7 +105,7 @@
     font-size: 16px;
     margin: 10px 0;
     border: none;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #350bf5;
     outline: none;
     resize: none;
 }
