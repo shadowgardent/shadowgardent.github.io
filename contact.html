@@ -14,8 +14,8 @@
     <section class="contact">
         <div class="content">
             <h2>Contact me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ut illum nostrum possimus dolorum velit
-                tempora neque nobis quasi rem.</p>
+            <p>I am eager to learn and develop my skills, and I am determined to gain as much 
+                experience as possible during my internship..</p>
         </div>
 
         <div class="container">
@@ -43,52 +43,6 @@
                         <p>Nawaprom.p@kkumail.com</p>
                     </div>
                 </div>
-            </div>
-            <div class="contactForm">
-                <form id="contactForm">
-                    <h2>Send message</h2>
-                    <div class="inputBox">
-                        <input type="text" class="name" required>
-                        <span>Full Name</span>
-                    </div>
-
-                    <div class="inputBox">
-                        <input type="email" class="email" required>
-                        <span>Email</span>
-                    </div>
-
-                    <div class="inputBox">
-                        <textarea class="message" required></textarea>
-                        <span>Type your message...</span>
-                    </div>
-
-                    <div class="inputBox">
-                        <input type="submit" value="Send">
-                    </div>
-                </form>
-
-                <script>
-                    const form = document.getElementById('contactForm');
-                    form.addEventListener('submit', async (e) => {
-                        e.preventDefault();
-                        const name = form.querySelector('.name').value.trim();
-                        const email = form.querySelector('.email').value.trim();
-                        const message = form.querySelector('.message').value.trim();
-                        const res = await fetch('http://localhost:3000/send', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ name, email, message })
-                        });
-                        const data = await res.json();
-                        if (data.ok) {
-                            alert('ส่งเรียบร้อย');
-                            form.reset();
-                        } else {
-                            alert('ส่งไม่สำเร็จ: ' + (data.error || 'unknown'));
-                            console.error(data);
-                        }
-                    });
-                </script>
             </div>
         </div>
     </section>
